@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Registration Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="card">
+      <div class="card-header">
+        <h1 class="card-title">Create an account</h1>
+        <p class="card-subtitle">
+          Please fill in the information below to create your account.
+        </p>
+      </div>
+
+      <form id="registrationForm" novalidate>
+        <!-- Username -->
+        <div class="input-group">
+          <label for="username">Username</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              autocomplete="off"
+            />
+            <span class="input-status-icon"></span>
+          </div>
+          <p class="input-hint">3–15 characters, letters and numbers only.</p>
+          <p class="error-message" id="usernameError"></p>
+        </div>
+
+        <!-- Full Name -->
+        <div class="input-group">
+          <label for="fullName">Full Name</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              autocomplete="name"
+            />
+            <span class="input-status-icon"></span>
+          </div>
+          <p class="input-hint">First and last name, letters and spaces only.</p>
+          <p class="error-message" id="fullNameError"></p>
+        </div>
+
+        <!-- Email -->
+        <div class="input-group">
+          <label for="email">Email</label>
+          <div class="input-wrapper">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@domain.com"
+              autocomplete="email"
+            />
+            <span class="input-status-icon"></span>
+          </div>
+          <p class="input-hint">Use a valid email format.</p>
+          <p class="error-message" id="emailError"></p>
+        </div>
+
+        <!-- Password -->
+        <div class="input-group">
+          <label for="password">Password</label>
+          <div class="input-wrapper password-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a strong password"
+              autocomplete="new-password"
+            />
+            <button type="button" class="toggle-password" id="togglePassword">
+              Show
+            </button>
+            <span class="input-status-icon"></span>
+          </div>
+
+          <ul class="password-rules">
+            <li id="ruleLength">Minimum 8 characters</li>
+            <li id="ruleNumberOrSymbol">
+              At least one number or one symbol (!, @, #, $, %…)
+            </li>
+            <li id="ruleNoName">Cannot contain your name</li>
+            <li id="ruleNoEmail">Cannot contain your email</li>
+          </ul>
+
+          <p class="error-message" id="passwordError"></p>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" id="submitBtn" disabled>
+          Create account
+        </button>
+
+        <p class="success-message" id="formSuccessMessage"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
